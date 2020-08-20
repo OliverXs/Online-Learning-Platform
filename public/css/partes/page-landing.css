@@ -1,0 +1,140 @@
+#page-landing{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary);
+}
+
+#page-landing #container{
+    width: 90vw;
+    max-width: 700px;
+    color: var(--color-text-in-primary);
+}
+
+.logo-container{
+    text-align: center;
+    margin-bottom: 3.2rem;
+}
+.logo-container img{
+    height: 10rem;
+}
+.logo-container h2{
+    font-weight: 500;
+    font-size: 3.6rem;
+    line-height: 4.6rem;
+    margin-top: 0.8rem;
+}
+
+.hero-image img{
+    width: 100%;
+}
+
+.buttons-container{
+    display: flex;
+    justify-content: center;
+    margin: 3.2rem 0;
+}
+.buttons-container a {
+    width: 30rem;
+    height: 10.4rem;
+
+    border-radius: .8rem;
+    margin-right: 1.6rem;
+
+    font: 700 2.4rem Archivo;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    color: var(--color-button-text);
+}
+.buttons-container a img{
+    width: 4rem;
+    margin-right: 2.4rem;
+}
+.buttons-container a.study{
+    background: var(--color-primary-lighter);
+}
+.buttons-container a.study:hover{
+    background: var(--color-primary-light);
+}
+.buttons-container a.give-classes{
+    margin-right: 0;
+
+    background: var(--color-secondary);
+}
+.buttons-container a.give-classes:hover{
+    background: var(--color-secondary-dark);
+}
+
+.criador h3{
+    font-size: 2.6rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.criador h4{
+    font-size: 2.6rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.criador img{
+    width: 3.5rem;
+    margin-left: .8rem;
+    margin-right: .8rem;
+}
+
+@media(min-width: 1100px){
+    #page-landing #container{
+        max-width: 1100px;
+        display: grid;
+        grid-template-columns:2fr 1fr 2fr;
+        grid-template-rows: 350px 1fr;
+        grid-template-areas:  "eduka image image" "button button texting";
+        gap: 60px;
+    }
+    .logo-container{
+        grid-area: eduka;
+        text-align: initial;
+        align-self: center;
+        margin: 0;
+    }
+    .logo-container h2{
+        font-size: 3.2rem;
+    }
+    .logo-container img{
+        height:100%;
+    }
+    .hero-image{
+        grid-area: image;
+    }
+    .buttons-container{
+        grid-area: button;
+        justify-content: flex-start;
+    }
+    .criador{
+        grid-area: texting;
+        align-self: center;
+        justify-self: end;
+    }
+    .criador h3{
+        font-size: 1.7rem;
+        margin: 0;
+    }
+    .criador h4{
+        font-size: 2rem;
+    }
+    .criador img{
+        width: 0rem;
+        margin: 0;
+    }
+
+}

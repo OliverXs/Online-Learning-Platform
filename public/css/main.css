@@ -1,0 +1,26 @@
+/* Aqui ficara as configurações globais do site como Header e Footer e o tamanho padrão das páginas. */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--color-background);
+}
+body, input, button, textarea{
+    font-weight: 599;
+    font-family: Poppins;
+    font-size: 1.6rem;
+    color: var(--color-text-base);
+}
+@media(max-width:700px){
+    :root{
+        font-size: 40%; /* controle das medidas rem */
+    }
+}
+@media(min-width:701px){
+    :root{
+        font-size: 62.5%; /* controle das medidas rem */
+    }
+}
+
