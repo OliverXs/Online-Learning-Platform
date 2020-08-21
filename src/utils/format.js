@@ -24,7 +24,7 @@ const weekdays = [
 function convertHoursToMinutes(time){
     const [hour, minutes]  = time.split(":")
 
-    return Number((hour * 60) + minutes)
+    return number((hour * 60) + minutes)
 }
 
 function getsubject(subjectNumber){

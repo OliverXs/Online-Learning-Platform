@@ -54,7 +54,7 @@ function pageGiveClasses (_req, res){
 }
 
 async function saveClasses (_req, res){
-    const CreateProffy = require("./database/createProffy")
+    const createProffy = require("./database/createProffy")
 
     const proffyValue = {
         name: _req.body.name,
@@ -80,11 +80,11 @@ async function saveClasses (_req, res){
         const db = await Database
         await createProffy(db,{proffyValue, classesValues, classScheduleValue})
 
-        let queryString = "?subject=" + req.body.subject
-        queryString += "&weekday=" + req.body.weekday[0]
-        queryString += "&time=" + req.body.time_from[0]
+        let queryString = "?subject=" + _req.body.subject
+        queryString += "&weekday=" + _req.body.weekday[0]
+        queryString += "&time=" + _req.body.time_from[0]
 
-        return res.redirect("/study" + queryString)
+        return _res.redirect("/study" + queryString)
     } catch  (error){
         console.log(error)
     }

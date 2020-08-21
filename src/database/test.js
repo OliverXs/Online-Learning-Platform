@@ -23,13 +23,13 @@ database.then(async(db)=>{
     ]
    createProffy(db, {proffyValue, classesValues, classScheduleValue})
 
-   const selectedProffys = await db.all("SELECT * FROM proffys")
+   const selectedProffys = await db.all(`SELECT * FROM proffys`)
 
    const selectClassesAndProffys = await db.all(`
         SELECT classes.*, proffys.*
         FROM proffys
-        JOIN classes ON (classes.proffy_id = proffys.id)
-        WHERE classes.proffy_id = 1;
+        JOIN classes ON (classes.proffy_id = proffy.id)
+        WHERE classes.proffy_id = 0;
    `)
 
 })
