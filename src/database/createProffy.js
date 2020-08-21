@@ -49,6 +49,6 @@ module.exports = async function(db, {proffyValue, classesValues, classScheduleVa
         `)
     })
 
-    await Promise.all(insertedAllclassScheduleValues)  
+    await Promise.all(insertedAllclassScheduleValue)  
 
 }
