@@ -42,7 +42,7 @@ async function pageStudy (_req, res){
 
         return res.render("study.html",{proffys, subject, filters, weekdays })
     }catch(error){
-        
+        console.log(error)
     }
 
 }
@@ -57,22 +57,22 @@ async function saveClasses (_req, res){
     const CreateProffy = require("./database/createProffy")
 
     const proffyValue = {
-        name: req.body.name,
-        avatar: req.body.avatar,
-        whatsapp: req.body.whatsapp,
-        bio: req.body.bio
+        name: _req.body.name,
+        avatar: _req.body.avatar,
+        whatsapp: _req.body.whatsapp,
+        bio: _req.body.bio
     }
     const classesValues ={
-        subject: req.body.subject,
-        cost: req.body.cost
+        subject: _req.body.subject,
+        cost: _req.body.cost
     }
-    const classScheduleValue = req.body.weekday.map(
+    const classScheduleValue = _req.body.weekday.map(
         (weekday, index)  => {
 
             return{
                 weekday,
-                time_from: convertHoursToMinutes( req.body.time_from[index]),
-                time_to: convertHoursToMinutes (req.body.time_to[index])
+                time_from: convertHoursToMinutes( _req.body.time_from[index]),
+                time_to: convertHoursToMinutes (_req.body.time_to[index])
             }
         }
     )
